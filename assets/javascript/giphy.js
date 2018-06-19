@@ -1,3 +1,5 @@
+var musicians = ["madonna", "taylor swift", "prince", "katy perry"];
+
 $("button").on("click", function() {
     var musician = $(this).attr("data-musician");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
@@ -26,6 +28,8 @@ $("button").on("click", function() {
   
     $("#gifs-appear-here").prepend(musicianDiv);
     
-}
+
+};
 });
 });
+
