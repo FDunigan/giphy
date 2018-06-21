@@ -1,15 +1,18 @@
-var musicians = ["madonna", "taylor swift", "prince", "katy perry", "bruno mars"];
+var musicians = ["freddie mercury", "neil peart", "john bonham", "jimi hendrix", "david gilmour", "eddie vedder"];
 
 function displayMusicianGif() {
     var musician = $(this).attr("data-musician");
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-        musician + "&api_key=nMb2MXAWMMnSaR0o3C8CkWcrig7hVTc7&limit=10";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + 
+    musician + "&api_key=nMb2MXAWMMnSaR0o3C8CkWcrig7hVTc7&limit=10";
   
     $.ajax({
      url: queryURL,
      method: "GET"
     })
     .then(function(response) {
+        console.log(queryURL);
+
+        console.log(response);
             
     var results = response.data;
   
@@ -28,51 +31,41 @@ function displayMusicianGif() {
   
     $("#gifs-appear-here").prepend(musicianDiv);
     
-
 };
 });
 };
 
-      // Function for displaying movie data
-      function renderButtons() {
+function renderButtons() {
 
-        // Deleting the movies prior to adding new movies
-        // (this is necessary otherwise you will have repeat buttons)
-        $("#buttons-view").empty();
+$("#buttons-view").empty();
 
-        // Looping through the array of movies
-        for (var i = 0; i < musicians.length; i++) {
+    for (var i = 0; i < musicians.length; i++) {
 
-          // Then dynamicaly generating buttons for each movie in the array
-          // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
-          var a = $("<button>");
-          // Adding a class of movie-btn to our button
-          a.addClass("musician-btn");
-          // Adding a data-attribute
-          a.attr("data-name", musicians[i]);
-          // Providing the initial button text
-          a.text(musicians[i]);
-          // Adding the button to the buttons-view div
-          $("#buttons-view").append(a);
-        }
-      }
+        var b = $("<button>");
+          
+        b.addClass("musician-btn");
+          
+        b.attr("data-musician", musicians[i]);
+          
+        b.text(musicians[i]);
+          
+        $("#buttons-view").append(b);
+    }
+}
 
-      // This function handles events where a movie button is clicked
-      $("#add-musician").on("click", function(event) {
-        event.preventDefault();
-        // This line grabs the input from the textbox
-        var musician = $("#musician-input").val().trim();
+$("#add-musician").on("click", function(event) {
 
-        // Adding movie from the textbox to our array
-        musicians.push(musician);
+event.preventDefault();
+        
+    var musician = $("#musician-input").val().trim();
 
-        // Calling renderButtons which handles the processing of our movie array
-        renderButtons();
-      });
+    musicians.push(musician);
 
-      // Adding a click event listener to all elements with a class of "movie-btn"
-      $(document).on("click", ".musician-btn", displayMusicianGif);
+    renderButtons();
 
-      // Calling the renderButtons function to display the intial buttons
-      renderButtons();
+});
+
+$(document).on("click", ".musician-btn", displayMusicianGif);
+
+renderButtons();
 

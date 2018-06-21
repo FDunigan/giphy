@@ -1,3 +1,12 @@
+body {
+    background: lightgray;
+}
+
+h1 {
+    color: #4aaaa5;
+    margin-left: 20px;
+}
+
 button {
     font-family: 'Encode Sans Semi Expanded', sans-serif;
     background: #4aaaa5;
@@ -18,3 +27,18 @@ input {
   margin: 10px;
 }
 
+#musician-form {
+    float: right;
+    font-family: 'Encode Sans Semi Expanded', sans-serif;
+    background: #4aaaa5;
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+#add-musician {
+    background: #4aaaa5;
+    color: white;
+    border-radius: 10px;
+}
