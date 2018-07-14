@@ -1,2 +1,5 @@
-# giphy
-Homework #6
+# Giphy (AJAX)
+
+
+
+[Search Away!](index.html)
