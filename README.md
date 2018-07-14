@@ -2,4 +2,4 @@
 
 
 
-[Search Away!](fdunigan.github.io/giphy)
+[Search Away!](https://fdunigan.github.io/giphy/)
