@@ -32,9 +32,9 @@ function displayMusicianGif() {
 
                 musicianDiv.append(p);
                 musicianDiv.append(musicianImage);
-                $("#gifs-appear-here").remove();
+                $("#gifs-here").remove();
 
-                $("#gifs-appear-here").prepend(musicianDiv);
+                $("#gifs-here").prepend(musicianDiv);
 
             }
             $(".musicianImage").on("click", function () {
