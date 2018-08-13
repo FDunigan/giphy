@@ -1,4 +1,4 @@
-var musicians = [""];
+var musicians = ["freddie mercury", "neil peart", "john bonham", "jimi hendrix", "david gilmour", "eddie vedder"];
 
 function displayMusicianGif() {
     var musician = $(this).attr("data-musician");
