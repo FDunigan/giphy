@@ -3,7 +3,7 @@ var musicians = ["freddie mercury", "neil peart", "john bonham", "jimi hendrix",
 function displayMusicianGif() {
     var musician = $(this).attr("data-musician");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-        musician + "&api_key=nMb2MXAWMMnSaR0o3C8CkWcrig7hVTc7&limit=10";
+        musician + "&api_key=aJTslSUGSOZh2Vq7u6njDQYEgXBrLbOm&limit=10";
 
     $.ajax({
         url: queryURL,
